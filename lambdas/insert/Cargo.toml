@@ -1,0 +1,39 @@
+[package]
+name = "insert"
+version = "0.1.0"
+edition = "2021"
+
+# Starting in Rust 1.62 you can use `cargo add` to add dependencies 
+# to your project.
+#
+# If you're using an older Rust version,
+# download cargo-edit(https://github.com/killercup/cargo-edit#installation) 
+# to install the `add` subcommand.
+#
+# Running `cargo add DEPENDENCY_NAME` will
+# add the latest version of a dependency to the list,
+# and it will keep the alphabetic ordering for you.
+
+[dependencies]
+lambda_http = "0.13.0"
+
+tokio = { version = "1", features = ["macros"] }
+sqlx = { version = "0.8", features = [ "runtime-tokio", "tls-native-tls" , "postgres", "chrono"] }
+aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
+aws-sdk-dsql = "1.0.0"
+serde = { version = "1.0.215", features = ["derive"] }
+serde_json = "1"
+chrono = { version = "0.4.38", features = ["serde"] }
+uuid = { version = "1.11.0", features = ["v4", "fast-rng"] }
+openssl = { version = "0.10.35", features = ["vendored"] }
+
+
+opentelemetry = "0.23.0"
+opentelemetry-datadog = { version = "0.11.0", features = ["reqwest-client"] }
+opentelemetry_sdk = { version = "0.23.0", features = ["rt-tokio", "trace"] }
+opentelemetry-http = { version = "0.12", features = ["reqwest"] }
+opentelemetry-stdout = "0.4.0"
+tracing-opentelemetry = "0.24.0"
+tracing-subscriber = "0.3.19"
+tracing = "0.1.41"
+

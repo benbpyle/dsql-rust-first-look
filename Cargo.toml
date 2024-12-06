@@ -1,0 +1,7 @@
+[workspace]
+members = [
+    "lambdas/insert",
+    "lambdas/select"
+]
+
+resolver = "2"
