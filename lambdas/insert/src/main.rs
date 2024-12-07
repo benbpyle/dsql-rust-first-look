@@ -56,7 +56,7 @@ async fn function_handler(
             let e: Todo = v.into();
             let query_span =
                 tracing::info_span!("Save Todo");
-            let result = sqlx::query("INSERT INTO Todos (id, name, description, created_at, update_at) VALUES ($1, $2, $3, $4, $5)")
+            let result = sqlx::query("INSERT INTO Todos (id, name, description, created_at, updated_at) VALUES ($1, $2, $3, $4, $5)")
                 .bind(e.id.clone())
                 .bind(e.name.clone())
                 .bind(e.description.clone())

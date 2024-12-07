@@ -21,7 +21,7 @@ export class SampleStack extends cdk.Stack {
       manifestPath: 'lambdas/insert',
       memorySize: 256,
       environment: {
-        CLUSTER_ENDPOINT: "qqabtvdilkxepq6xxfreja7vvm.dsql.us-east-1.on.aws",
+        CLUSTER_ENDPOINT: process.env.CLUSTER_ENDPOINT!,
         DD_API_KEY: process.env.DD_API_KEY!,
         DD_SERVICE: 'dsql-insert',
         DD_SITE: process.env.DD_SITE!,
@@ -36,7 +36,7 @@ export class SampleStack extends cdk.Stack {
       manifestPath: 'lambdas/select',
       memorySize: 256,
       environment: {
-        CLUSTER_ENDPOINT: "qqabtvdilkxepq6xxfreja7vvm.dsql.us-east-1.on.aws",
+        CLUSTER_ENDPOINT: process.env.CLUSTER_ENDPOINT!,
         DD_API_KEY: process.env.DD_API_KEY!,
         DD_SERVICE: 'dsql-select',
         DD_SITE: process.env.DD_SITE!,
